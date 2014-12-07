@@ -391,13 +391,13 @@ function reverseGravity()
 	if (movement.gravity > 0) {
 		movement.gravity = -10.0;
 		movement.maxFallSpeed = -20.0;
-		tr.Rotate(Vector3.forward * 180);
+		tr.animation.Play("rotation_player_down");
 		grounded = false;
 		}
 	else {
 		movement.gravity = 10.0;
 		movement.maxFallSpeed = 20.0;
-		tr.Rotate(Vector3.forward * 180);
+		tr.animation.Play("rotation_player_up");
 	}
 }
 
