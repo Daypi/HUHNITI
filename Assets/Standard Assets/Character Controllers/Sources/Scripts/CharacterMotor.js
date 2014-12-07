@@ -4,7 +4,8 @@
 
 // Does this script currently respond to input?
 var canControl : boolean = true;
-
+var playerFlipping : boolean = false;
+var flipTimer : float;
 var useFixedUpdate : boolean = true;
 
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
@@ -181,6 +182,10 @@ function Awake () {
 }
 
 private function UpdateFunction () {
+	if (playerFlipping)
+		flipTimer -= Time.deltaTime;
+	if (flipTimer >= 0)
+		playerFlipping = false;
 	// We copy the actual velocity into a temporary variable that we can manipulate.
 	var velocity : Vector3 = movement.velocity;
 	
@@ -386,18 +391,30 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 	return velocity;
 }
 
+private function IsGroundedTest () {
+	return (groundNormal.y > 0.01);
+}
+
 function reverseGravity()
 {
+	playerFlipping = true;
+	flipTimer = 1;
 	if (movement.gravity > 0) {
 		movement.gravity = -10.0;
 		movement.maxFallSpeed = -20.0;
 		tr.animation.Play("rotation_player_down");
 		grounded = false;
+		//groundNormal = Vector3.zero;
+		//lastGroundNormal = Vector3.zero;
 		}
 	else {
 		movement.gravity = 10.0;
 		movement.maxFallSpeed = 20.0;
 		tr.animation.Play("rotation_player_up");
+		grounded = false;
+		//groundNormal = Vector3.zero;
+		//lastGroundNormal = Vector3.zero;
+		
 	}
 }
 
@@ -445,12 +462,11 @@ if (movement.gravity < 0) {
 			jumping.lastStartTime = Time.time;
 			jumping.lastButtonDownTime = -100;
 			jumping.holdingJumpButton = true;
-			
 			// Calculate the jumping direction
 			if (TooSteep())
-				jumping.jumpDir = Vector3.Slerp(Vector3.up, groundNormal, jumping.steepPerpAmount);
+				jumping.jumpDir = Vector3.Slerp((movement.gravity < 0 ? Vector3.down : Vector3.up), groundNormal, jumping.steepPerpAmount);
 			else
-				jumping.jumpDir = Vector3.Slerp(Vector3.up, groundNormal, jumping.perpAmount);
+				jumping.jumpDir = Vector3.Slerp((movement.gravity < 0 ? Vector3.down : Vector3.up), groundNormal, jumping.perpAmount);
 			
 			// Apply the jumping force to the velocity. Cancel any vertical velocity first.
 			velocity.y = 0;
@@ -476,12 +492,17 @@ if (movement.gravity < 0) {
 }
 
 function OnControllerColliderHit (hit : ControllerColliderHit) {
-	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0) {
+	if ((movement.gravity > 0 && hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0) 
+		 ||(movement.gravity < 0 && hit.normal.y < 0 && hit.normal.y < groundNormal.y && hit.moveDirection.y > 0)
+		) {
 		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector3.zero)
+		{
 			groundNormal = hit.normal;
+		}
 		else
+		{
 			groundNormal = lastGroundNormal;
-		
+		}
 		movingPlatform.hitPlatform = hit.collider.transform;
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector3.zero;
@@ -531,10 +552,6 @@ private function GetDesiredHorizontalVelocity () {
 private function AdjustGroundVelocityToNormal (hVelocity : Vector3, groundNormal : Vector3) : Vector3 {
 	var sideways : Vector3 = Vector3.Cross(Vector3.up, hVelocity);
 	return Vector3.Cross(sideways, groundNormal).normalized * hVelocity.magnitude;
-}
-
-private function IsGroundedTest () {
-	return (groundNormal.y > 0.01);
 }
 
 function GetMaxAcceleration (grounded : boolean) : float {
