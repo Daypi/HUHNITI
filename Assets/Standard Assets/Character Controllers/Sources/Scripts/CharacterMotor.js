@@ -386,8 +386,25 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 	return velocity;
 }
 
+function reverseGravity()
+{
+	if (movement.gravity > 0) {
+		movement.gravity = -10.0;
+		movement.maxFallSpeed = -20.0;
+		tr.Rotate(Vector3.forward * 180);
+		grounded = false;
+		}
+	else {
+		movement.gravity = 10.0;
+		movement.maxFallSpeed = 20.0;
+		tr.Rotate(Vector3.forward * 180);
+	}
+}
+
 private function ApplyGravityAndJumping (velocity : Vector3) {
-	
+if (movement.gravity < 0) {
+
+}
 	if (!inputJump || !canControl) {
 		jumping.holdingJumpButton = false;
 		jumping.lastButtonDownTime = -100;
