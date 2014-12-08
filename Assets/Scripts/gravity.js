@@ -3,7 +3,7 @@ var pullRadius = 2;
 var pullForce = 5;
 function OnTriggerEnter (collision : Collider) {
 if (collision.gameObject.tag == "Player"){
-	 //Physics.gravity = new Vector3(0,9.81f,0);
+	//Physics.gravity = new Vector3(0,9.81f,0);
 	var hitColliders = Physics.OverlapSphere(plane.transform.position, pullRadius);
 	var forceDirection : Vector3;
 	var mode: ForceMode = ForceMode.Acceleration;
