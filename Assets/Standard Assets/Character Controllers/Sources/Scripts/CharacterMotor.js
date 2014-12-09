@@ -7,6 +7,7 @@ var canControl : boolean = true;
 var playerFlipping : boolean = false;
 var flipTimer : float;
 var useFixedUpdate : boolean = true;
+var reverse = false;
 
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
 // Very handy for organization!
@@ -183,7 +184,7 @@ function Awake () {
 
 private function UpdateFunction () {
 	//Debug.Log(movement.gravity);
-	//Debug.Log(grounded);
+	//Debug.Log("grounded = " + grounded);
 	//Debug.Log(groundNormal);
 	if (playerFlipping)
 		flipTimer -= Time.deltaTime;
@@ -231,7 +232,7 @@ private function UpdateFunction () {
 	
 	// Reset variables that will be set by collision function
 	movingPlatform.hitPlatform = null;
-	groundNormal = (movement.gravity > 0 ? Vector3.zero : Vector3(0, -1, 0));
+	groundNormal = Vector3.zero;
 	
    	// Move our character!
 	movement.collisionFlags = controller.Move (currentMovementOffset);
@@ -281,7 +282,7 @@ private function UpdateFunction () {
 		//Debug.Log("isgroundid" + IsGroundedTest());
 	if (grounded && !IsGroundedTest()) {
 		grounded = false;
-		Debug.Log("start jump");
+		//Debug.Log("start jump");
 		// Apply inertia from platform
 		if (movingPlatform.enabled &&
 			(movingPlatform.movementTransfer == MovementTransferOnJump.InitTransfer ||
@@ -298,8 +299,9 @@ private function UpdateFunction () {
 	}
 	// We were not grounded but just landed on something
 
+	
 	else if (!grounded && IsGroundedTest()) {
-	Debug.Log("landing");
+	//Debug.Log("landing");
 		grounded = true;
 		jumping.jumping = false;
 		SubtractNewPlatformVelocity();
@@ -399,34 +401,15 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 }
 
 private function IsGroundedTest () {
-	//Debug.Log(groundNormal);
 	if (playerFlipping)
 		return false;
-	if (movement.gravity > 0)
+	if (!reverse)
 		return (groundNormal.y > 0.01);
 	else
 	{
-		return (groundNormal.y < 0.01);
+		return (groundNormal.y < -0.01);
 	}
 		
-}
-
-function reverseGravity()
-{
-	playerFlipping = true;
-	flipTimer = 5;
-	if (movement.gravity > 0) {
-		movement.gravity = 10.0;
-		movement.maxFallSpeed = -20.0;
-		tr.animation.Play("rotation_player_down");
-		grounded = false;
-		}
-	else {
-		movement.gravity = 10.0;
-		movement.maxFallSpeed = 20.0;
-		tr.animation.Play("rotation_player_up");
-		grounded = false;
-	}
 }
 
 private function ApplyGravityAndJumping (velocity : Vector3) {
@@ -503,17 +486,39 @@ if (movement.gravity < 0) {
 	return velocity;
 }
 
+
+function reverseGravity()
+{
+	playerFlipping = true;
+	flipTimer = 1;
+	if (reverse == false) {
+		reverse = true;
+		movement.gravity = -10.0;
+		movement.maxFallSpeed = -20.0;
+		tr.animation.Play("rotation_player_down");
+		grounded = false;
+		}
+	else {
+		reverse = false;
+		movement.gravity = 10.0;
+		movement.maxFallSpeed = 20.0;
+		tr.animation.Play("rotation_player_up");
+		grounded = false;
+	}
+}
+
 function OnControllerColliderHit (hit : ControllerColliderHit) {
 	//Debug.Log(hit.gameObject.name);
 	//Debug.Log("groundnormal" + groundNormal);
-	//Debug.Log("hit normal" + hit.normal);
+	Debug.Log("hit normal" + hit.normal);
 	//Debug.Log("move dir" + hit.moveDirection.y);
-	if (movement.gravity > 0 && hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0)
+//	Debug.Log();
+	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0)
 	{
-		//Debug.Log("IFEU");
+
 		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector3.zero)
 		{
-			//Debug.Log("set ground normal");
+			//Debug.Log("set ground normal osol");
 			groundNormal = hit.normal;
 		}
 		else
@@ -524,12 +529,12 @@ function OnControllerColliderHit (hit : ControllerColliderHit) {
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector3.zero;
 	}
-	else if (movement.gravity < 0 && hit.normal.y < 0 && hit.moveDirection.y > 0)
+	else if (hit.normal.y < 0 && hit.normal.y < groundNormal.y && hit.moveDirection.y > 0)
 	{
-		//Debug.Log("ELSE IF");
-		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector3.zero)
+			Debug.Log("ELSE IF");
+		if ((movement.lastHitPoint - hit.point).sqrMagnitude > 0.001)// || lastGroundNormal == Vector3.zero)
 		{
-			//Debug.Log("set ground normal");
+			Debug.Log("set ground normal en lair");
 			groundNormal = hit.normal;
 		}
 		else
