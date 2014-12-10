@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menu.unity
   - enabled: 1
-    path: Assets/Level1.unity
+    path: Assets/testbutton.unity
