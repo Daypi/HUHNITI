@@ -4,10 +4,8 @@
 
 // Does this script currently respond to input?
 var canControl : boolean = true;
-var playerFlipping : boolean = false;
-var flipTimer : float;
+var moving : boolean = true;
 var useFixedUpdate : boolean = true;
-var reverse = false;
 
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
 // Very handy for organization!
@@ -67,6 +65,11 @@ enum MovementTransferOnJump {
 	InitTransfer, // Jump gets its initial velocity from the floor, then gradualy comes to a stop.
 	PermaTransfer, // Jump gets its initial velocity from the floor, and keeps that velocity until landing.
 	PermaLocked // Jump is relative to the movement of the last touched floor and will move together with that floor.
+}
+
+function reverseGravity()
+{
+	tr.animation.Play("rotation_player_up");
 }
 
 // We will contain all the jumping related variables in one helper class for clarity.
@@ -183,13 +186,6 @@ function Awake () {
 }
 
 private function UpdateFunction () {
-	//Debug.Log(movement.gravity);
-	//Debug.Log("grounded = " + grounded);
-	//Debug.Log(groundNormal);
-	if (playerFlipping)
-		flipTimer -= Time.deltaTime;
-	if (flipTimer <= 0)
-		playerFlipping = false;
 	// We copy the actual velocity into a temporary variable that we can manipulate.
 	var velocity : Vector3 = movement.velocity;
 	
@@ -218,6 +214,9 @@ private function UpdateFunction () {
         }
 	}
 	
+	 if (!moving)
+      velocity = Vector3.zero;
+      
 	// Save lastPosition for velocity calculation.
 	var lastPosition : Vector3 = tr.position;
 	
@@ -277,12 +276,10 @@ private function UpdateFunction () {
 		}
 	}
 	
-	// We were grounded but just lost grounding
-		//Debug.Log(grounded);
-		//Debug.Log("isgroundid" + IsGroundedTest());
+	// We were grounded but just loosed grounding
 	if (grounded && !IsGroundedTest()) {
 		grounded = false;
-		//Debug.Log("start jump");
+		
 		// Apply inertia from platform
 		if (movingPlatform.enabled &&
 			(movingPlatform.movementTransfer == MovementTransferOnJump.InitTransfer ||
@@ -298,10 +295,7 @@ private function UpdateFunction () {
 		tr.position += pushDownOffset * Vector3.up;
 	}
 	// We were not grounded but just landed on something
-
-	
 	else if (!grounded && IsGroundedTest()) {
-	//Debug.Log("landing");
 		grounded = true;
 		jumping.jumping = false;
 		SubtractNewPlatformVelocity();
@@ -400,23 +394,8 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 	return velocity;
 }
 
-private function IsGroundedTest () {
-	if (playerFlipping)
-		return false;
-	if (!reverse)
-		return (groundNormal.y > 0.01);
-	else
-	{
-		return (groundNormal.y < -0.01);
-	}
-		
-}
-
 private function ApplyGravityAndJumping (velocity : Vector3) {
-if (movement.gravity < 0) {
-
-}
-	//Debug.Log(groundNormal);
+	
 	if (!inputJump || !canControl) {
 		jumping.holdingJumpButton = false;
 		jumping.lastButtonDownTime = -100;
@@ -429,7 +408,7 @@ if (movement.gravity < 0) {
 		velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
 	else {
 		velocity.y = movement.velocity.y - movement.gravity * Time.deltaTime;
-		//Debug.Log(velocity.y);
+		
 		// When jumping up we don't apply gravity for some time when the user is holding the jump button.
 		// This gives more control over jump height by pressing the button longer.
 		if (jumping.jumping && jumping.holdingJumpButton) {
@@ -457,11 +436,12 @@ if (movement.gravity < 0) {
 			jumping.lastStartTime = Time.time;
 			jumping.lastButtonDownTime = -100;
 			jumping.holdingJumpButton = true;
+			
 			// Calculate the jumping direction
 			if (TooSteep())
-				jumping.jumpDir = Vector3.Slerp((movement.gravity < 0 ? Vector3.down : Vector3.up), groundNormal, jumping.steepPerpAmount);
+				jumping.jumpDir = Vector3.Slerp(Vector3.up, groundNormal, jumping.steepPerpAmount);
 			else
-				jumping.jumpDir = Vector3.Slerp((movement.gravity < 0 ? Vector3.down : Vector3.up), groundNormal, jumping.perpAmount);
+				jumping.jumpDir = Vector3.Slerp(Vector3.up, groundNormal, jumping.perpAmount);
 			
 			// Apply the jumping force to the velocity. Cancel any vertical velocity first.
 			velocity.y = 0;
@@ -486,61 +466,13 @@ if (movement.gravity < 0) {
 	return velocity;
 }
 
-
-function reverseGravity()
-{
-	playerFlipping = true;
-	flipTimer = 1;
-	if (reverse == false) {
-		reverse = true;
-		movement.gravity = -10.0;
-		movement.maxFallSpeed = -20.0;
-		tr.animation.Play("rotation_player_down");
-		grounded = false;
-		}
-	else {
-		reverse = false;
-		movement.gravity = 10.0;
-		movement.maxFallSpeed = 20.0;
-		tr.animation.Play("rotation_player_up");
-		grounded = false;
-	}
-}
-
 function OnControllerColliderHit (hit : ControllerColliderHit) {
-	//Debug.Log(hit.gameObject.name);
-	//Debug.Log("groundnormal" + groundNormal);
-	Debug.Log("hit normal" + hit.normal);
-	//Debug.Log("move dir" + hit.moveDirection.y);
-//	Debug.Log();
-	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0)
-	{
-
+	if (hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0) {
 		if ((hit.point - movement.lastHitPoint).sqrMagnitude > 0.001 || lastGroundNormal == Vector3.zero)
-		{
-			//Debug.Log("set ground normal osol");
 			groundNormal = hit.normal;
-		}
 		else
-		{
 			groundNormal = lastGroundNormal;
-		}
-		movingPlatform.hitPlatform = hit.collider.transform;
-		movement.hitPoint = hit.point;
-		movement.frameVelocity = Vector3.zero;
-	}
-	else if (hit.normal.y < 0 && hit.normal.y < groundNormal.y && hit.moveDirection.y > 0)
-	{
-			Debug.Log("ELSE IF");
-		if ((movement.lastHitPoint - hit.point).sqrMagnitude > 0.001)// || lastGroundNormal == Vector3.zero)
-		{
-			Debug.Log("set ground normal en lair");
-			groundNormal = hit.normal;
-		}
-		else
-		{
-			groundNormal = lastGroundNormal;
-		}
+		
 		movingPlatform.hitPlatform = hit.collider.transform;
 		movement.hitPoint = hit.point;
 		movement.frameVelocity = Vector3.zero;
@@ -592,6 +524,10 @@ private function AdjustGroundVelocityToNormal (hVelocity : Vector3, groundNormal
 	return Vector3.Cross(sideways, groundNormal).normalized * hVelocity.magnitude;
 }
 
+private function IsGroundedTest () {
+	return (groundNormal.y > 0.01);
+}
+
 function GetMaxAcceleration (grounded : boolean) : float {
 	// Maximum acceleration on ground and in air
 	if (grounded)
@@ -619,8 +555,6 @@ function IsTouchingCeiling () {
 }
 
 function IsGrounded () {
-	//if (playerFlipping)
-	//	return false;
 	return grounded;
 }
 
@@ -647,6 +581,21 @@ function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 		var length : float = new Vector3(temp.x, 0, temp.z * zAxisEllipseMultiplier).magnitude * movement.maxSidewaysSpeed;
 		return length;
 	}
+}
+
+function stopMovement()
+{
+	Debug.Log("stop movement");
+  	movement.maxFallSpeed = 0;
+   	movement.gravity = 0;
+   	moving = false;
+}
+
+function ResumeMovement()
+{
+   movement.maxFallSpeed = 20;
+   movement.gravity = 20;
+   moving = true;
 }
 
 function SetVelocity (velocity : Vector3) {
