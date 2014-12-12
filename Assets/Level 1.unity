@@ -761,7 +761,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 87204685}
-  - 95: {fileID: 87204687}
   - 111: {fileID: 87204686}
   m_Layer: 0
   m_Name: door
@@ -803,22 +802,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!95 &87204687
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: e34d8ba9438c6ad4aa66fe4d7211b952,
-    type: 2}
-  m_PrefabInternal: {fileID: 2107080358}
-  m_GameObject: {fileID: 87204684}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da8433b38940e0c4088e901bc0907c56, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &89227900
 GameObject:
   m_ObjectHideFlags: 0
@@ -18282,7 +18265,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: e34d8ba9438c6ad4aa66fe4d7211b952, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e34d8ba9438c6ad4aa66fe4d7211b952, type: 2}
   m_RootGameObject: {fileID: 87204684}
   m_IsPrefabParent: 0
