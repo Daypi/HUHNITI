@@ -33286,6 +33286,7 @@ GameObject:
   - 114: {fileID: 1512771586}
   - 114: {fileID: 1512771585}
   - 111: {fileID: 1512771590}
+  - 114: {fileID: 1512771591}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Player
@@ -33318,10 +33319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canControl: 1
-  playerFlipping: 0
-  flipTimer: 0
+  moving: 1
   useFixedUpdate: 1
-  reverse: 0
   movement:
     maxForwardSpeed: 10
     maxSidewaysSpeed: 10
@@ -33429,6 +33428,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1512771591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512771584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0bf6133ffebd341b1bc02d97fd67f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: .5
 --- !u!1 &1516014988
 GameObject:
   m_ObjectHideFlags: 0

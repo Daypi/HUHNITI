@@ -9,7 +9,8 @@ function OnTriggerEnter (collision : Collider) {
 		//level.transform.RotateAround(level.collider.bounds.center, Vector3.right, 180);
 		//level.transform.localEulerAngles = new Vector3(180,0,0);
 		//player.SendMessage("stopMovement");
-		level.transform.Rotate(Vector3.right * 180);
+		//player.transform.position.y = player.transform.position.y + 5;
+		//level.transform.Rotate(Vector3.right * 180);
 		//player.SendMessage("ResumeMovement");
 
 		/*level.transform.localEulerAngles.x = 180;
@@ -18,13 +19,13 @@ function OnTriggerEnter (collision : Collider) {
 		
 		//yield;
 		/*level.transform.rotation = Quaternion.AngleAxis(180, Vector3.right);*/
-		player.transform.position.y = player.transform.position.y - 2;
 		//player.transform.Rotate(Vector3.forward * 180 * Time.deltaTime);
 		//player.transform.position = pos;
 		//yield;
-		player.transform.parent = null;
-		//player.transform.position = pos;
 		
 		player.SendMessage("reverseGravity");
+		level.transform.Rotate(Vector3.right * 180);
+		player.transform.parent = null;
+		//player.transform.position = pos;
 	}
 }
