@@ -22,7 +22,7 @@ function OnTriggerEnter (collision : Collider) {
 		//player.transform.Rotate(Vector3.forward * 180 * Time.deltaTime);
 		//player.transform.position = pos;
 		//yield;
-		
+
 		player.SendMessage("reverseGravity");
 		level.transform.Rotate(Vector3.right * 180);
 		player.transform.parent = null;
