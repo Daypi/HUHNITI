@@ -17,15 +17,15 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: -10.7756815, y: -2.69011331, z: -.518234611}
-        inSlope: {x: 0, y: 3.06511927, z: 0}
-        outSlope: {x: 0, y: 3.06511927, z: 0}
+        value: {x: 0, y: -.106481075, z: 0}
+        inSlope: {x: 0, y: -3.72852015, z: 3.37128228e-07}
+        outSlope: {x: 0, y: -3.72852015, z: 3.37128228e-07}
         tangentMode: 0
       - time: .833333313
-        value: {x: -10.7756815, y: -.13584733, z: -.518234611}
-        inSlope: {x: 0, y: 3.06511927, z: 0}
-        outSlope: {x: 0, y: 3.06511927, z: 0}
-        tangentMode: 3
+        value: {x: 0, y: -3.21358109, z: 2.80940185e-07}
+        inSlope: {x: 0, y: -3.72852015, z: 3.37128228e-07}
+        outSlope: {x: 0, y: -3.72852015, z: 3.37128228e-07}
+        tangentMode: 131661860
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
@@ -62,12 +62,31 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -10.7756815
+        value: -.106481075
+        inSlope: -3.72852015
+        outSlope: -3.72852015
+        tangentMode: 10
+      - time: .833333313
+        value: -3.21358109
+        inSlope: -3.72852015
+        outSlope: -3.72852015
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       - time: .833333313
-        value: -10.7756815
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -81,33 +100,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -2.69011331
-        inSlope: 3.06511927
-        outSlope: 3.06511927
+        value: 0
+        inSlope: 3.37128228e-07
+        outSlope: 3.37128228e-07
         tangentMode: 10
       - time: .833333313
-        value: -.13584733
-        inSlope: 3.06511927
-        outSlope: 3.06511927
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.y
-    path: 
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -.518234611
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .833333313
-        value: -.518234611
-        inSlope: 0
-        outSlope: 0
+        value: 2.80940185e-07
+        inSlope: 3.37128228e-07
+        outSlope: 3.37128228e-07
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2

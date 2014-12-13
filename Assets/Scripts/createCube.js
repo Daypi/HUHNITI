@@ -13,7 +13,6 @@ if (this.transform.GetChildCount() > ammo)
 	var num : int = generated - ammo;
 	var names : String = "cubeClone" + num.ToString();
 	var cubeBis : GameObject = GameObject.Find(names);
-	/*del.SendMessage("die");*/
 	Destroy(cubeBis);
 	}
 
