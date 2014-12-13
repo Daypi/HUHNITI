@@ -4,6 +4,7 @@
 TagManager:
   tags:
   - explosion_cube
+  - cannon
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

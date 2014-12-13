@@ -158,7 +158,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
@@ -199,6 +199,7 @@ MonoBehaviour:
   speed: 50
   angle: 5
   cannon: {fileID: 100002}
+  level: {fileID: 0}
   generationPoint: {fileID: 0}
   ammo: 5
 --- !u!1001 &100100000

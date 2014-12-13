@@ -9,7 +9,7 @@ function Start(){
 		if (hit && hit.rigidbody && hit.transform.tag == "explosion_cube")
 			hit.rigidbody.AddExplosionForce(power, explosionPos, radius, 3.0);
 	}
-	for (i = 0; i < 6; i++) {
+	/*for (i = 0; i < 6; i++) {
 		yield WaitForSeconds(0.4);
 		for (var hit : Collider in colliders) {
 			if (hit && hit.rigidbody && hit.transform.tag == "explosion_cube")
@@ -20,8 +20,7 @@ function Start(){
 			if (hit && hit.rigidbody && hit.transform.tag == "explosion_cube")
 				hit.transform.renderer.enabled = true;
 		}
-	}
-	//this.transform.animation.Play();
-	//yield WaitForSeconds(3);
+	}*/
+	yield WaitForSeconds(3);
 	Destroy(body);
 }

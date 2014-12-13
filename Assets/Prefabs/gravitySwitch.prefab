@@ -103,7 +103,7 @@ GameObject:
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: gravity_switch
+  m_Name: gravitySwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
