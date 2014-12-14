@@ -8,17 +8,16 @@ private var generated : int = 0;
 
 function OnTriggerEnter (collision : Collider) {
 
-if (this.transform.GetChildCount() > ammo)
+if (generated >= ammo)
 	{
 	var num : int = generated - ammo;
-	var names : String = "cubeClone" + num.ToString();
+	var names : String = button.transform.name + "_cubeClone" + num.ToString();
 	var cubeBis : GameObject = GameObject.Find(names);
-	/*del.SendMessage("die");*/
 	Destroy(cubeBis);
 	}
 
 if (collision.gameObject.tag == "Player"){
-	var name : String = "cubeClone" + generated.ToString();
+	var name : String = button.transform.name + "_cubeClone" + generated.ToString();
 	generated++;
 	var cubeClone : Rigidbody = Instantiate(cube, spawnLocation.position, spawnLocation.rotation);
 	cubeClone.name = name;
