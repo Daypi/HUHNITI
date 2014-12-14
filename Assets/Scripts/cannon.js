@@ -9,6 +9,7 @@ private var generated : int = 0;
 private var count : int = 0;
 
 function OnTriggerEnter (collision : Collider) {
+if (cannon.rigidbody.constraints == RigidbodyConstraints.FreezeRotation){
 if (generated < ammo && collision.gameObject.tag == "Player")
 {
 	var name : String = cannon.transform.name + "_ballClone" + generated.ToString();
@@ -31,5 +32,6 @@ else {
 		ballBis.rigidbody.velocity = cannon.transform.right * speed;
 		ballBis.rigidbody.velocity.y = angle;	
 		}
+	}
 	}
 }
