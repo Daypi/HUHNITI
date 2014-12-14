@@ -27,11 +27,14 @@ public class MouseLook : MonoBehaviour {
 
 	public float minimumY = -60F;
 	public float maximumY = 60F;
+	public bool  inactive = false;
 
 	float rotationY = 0F;
 
 	void Update ()
 	{
+		if (inactive)
+			return;
 		if (axes == RotationAxes.MouseXAndY)
 		{
 			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
@@ -53,7 +56,17 @@ public class MouseLook : MonoBehaviour {
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 		}
 	}
-	
+
+	void BlockCamera()
+	{
+		inactive = true;
+	}
+
+	void UnblockCamera()
+	{
+		inactive = false;
+	}
+
 	void Start ()
 	{
 		// Make the rigid body not change rotation

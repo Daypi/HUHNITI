@@ -107,7 +107,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 9272521365bb74542b2f2d6801f968b4, type: 3}
+  m_Font: {fileID: 12800000, guid: 756802b0ae9bbe44b8f34f633624092d, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 80
   m_FontStyle: 0
@@ -473,7 +473,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 9272521365bb74542b2f2d6801f968b4, type: 3}
+  m_Font: {fileID: 12800000, guid: 756802b0ae9bbe44b8f34f633624092d, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 100
   m_FontStyle: 0
@@ -527,7 +527,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 9272521365bb74542b2f2d6801f968b4, type: 3}
+  m_Font: {fileID: 12800000, guid: 756802b0ae9bbe44b8f34f633624092d, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 80
   m_FontStyle: 0
