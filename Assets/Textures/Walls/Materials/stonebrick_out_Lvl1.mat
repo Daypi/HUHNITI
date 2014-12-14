@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: stonebrick_8
+  m_Name: stonebrick_out_Lvl1
   m_Shader: {fileID: 4800000, guid: 054a31a99d11e49d110086ba44295342, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,8 +17,8 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 7b4904dc58e3e4c42906c4d2eaf72c80, type: 3}
-          m_Scale: {x: 8, y: 5}
+          m_Texture: {fileID: 2800000, guid: b3c8737f730b235488e3fceba2c7fef8, type: 3}
+          m_Scale: {x: 1, y: 3}
           m_Offset: {x: 0, y: 0}
       data:
         first:
