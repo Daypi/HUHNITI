@@ -14,6 +14,7 @@ if (collision.gameObject.tag == "Player" && generated >= ammo)
 	var num : int = generated - ammo;
 	var names : String = button.transform.name + "_cubeClone" + num.ToString();
 	var cubeBis : GameObject = GameObject.Find(names);
+	cubeBis.SendMessage("explosion");
 	Destroy(cubeBis);
 	}
 
