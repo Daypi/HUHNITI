@@ -25,5 +25,6 @@ if (collision.gameObject.tag == "Player"){
 	cubeClone.name = name;
 	cubeClone.transform.parent = this.transform;
     cubeClone.velocity = button.transform.right * (-speed);
+    audio.Play();
 	}
 }
