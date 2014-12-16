@@ -5115,6 +5115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197719ef08ce847428c1684ccd753ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 1
+  MinAngle: 90
   cube: {fileID: 5400000, guid: 17a5b280ff5b6c948a155abb414eb62b, type: 2}
   speed: 10
   button: {fileID: 513417742}
@@ -7892,9 +7894,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 5400000, guid: 8a2715a2e39bf414ea2c4e9ee1f107b4, type: 2}
   speed: 100
-  angle: 5
+  angle: 20
   cannon: {fileID: 1335617721}
   level: {fileID: 1095460086}
+  Range: 1
+  MinAngle: 90
   generationPoint: {fileID: 291935780}
   ammo: 5
 --- !u!23 &807599303
@@ -21866,6 +21870,10 @@ Prefab:
       propertyPath: level
       value: 
       objectReference: {fileID: 1095460086}
+    - target: {fileID: 11400000, guid: e065e2caa49444848a10316af89012c9, type: 2}
+      propertyPath: angle
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e065e2caa49444848a10316af89012c9, type: 2}
   m_RootGameObject: {fileID: 1335617721}
