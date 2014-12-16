@@ -1,5 +1,6 @@
 ﻿var door : GameObject;
 private var openInt : int = 0;
+
 function OnTriggerEnter (collision : Collider) {
 if (collision.tag != "explosion_cube") {
 	if (openInt == 0)
@@ -12,8 +13,14 @@ if (collision.tag != "explosion_cube") {
 
 function OnTriggerExit (collision : Collider) {
 if (collision.tag != "explosion_cube") {
-	if (openInt == 1 && Collision.tag != "explosion_cube")
+	if (openInt == 1)
 		door.transform.animation.PlayQueued("close_door", QueueMode.CompleteOthers);
 	openInt--;
 	}
+}
+
+function deadInside(){
+if (openInt == 1)
+		door.transform.animation.PlayQueued("close_door", QueueMode.CompleteOthers);
+	openInt--;
 }
