@@ -319,7 +319,7 @@ MonoBehaviour:
   jumping:
     enabled: 1
     baseHeight: 1
-    extraHeight: 4.0999999
+    extraHeight: 1
     perpAmount: 0
     steepPerpAmount: .5
   movingPlatform:
@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushPower: 1
+  basePush: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

@@ -37,7 +37,10 @@ function OnMouseUp() {
      else if (action == "Resume")
      	GameObject.Find("First Person Controller").SendMessage("unPause");
      else
+     {
+     	Time.timeScale = 1;
      	Application.LoadLevel(action);
+     }
 }
 
 @script RequireComponent (AudioSource)
