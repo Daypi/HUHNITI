@@ -29,6 +29,7 @@ for (var hit : Collider in colliders) {
 			hit.rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
 		}
 	forceField.renderer.enabled = true;
+	lockPoint.particleSystem.enableEmission = false;
 	free = false;
 	}
 }
@@ -46,6 +47,7 @@ if (down == 0) {
 			hit.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		}
 	forceField.renderer.enabled = false;
+	lockPoint.particleSystem.enableEmission = true;
 	free = true;
 	}
 }
