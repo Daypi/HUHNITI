@@ -25,11 +25,15 @@ function Update () {
 		
 		// Multiply the normalized direction vector by the modified length
 		directionVector = directionVector * directionLength;
+		if (!motor.audio.isPlaying && motor.grounded)
+			motor.audio.Play();
 	}
 	
 	// Apply the direction to the CharacterMotor
 	motor.inputMoveDirection = transform.rotation * directionVector;
 	motor.inputJump = Input.GetButton("Jump");
+	Debug.Log(motor.audio.isPlaying);
+
 }
 
 // Require a character controller to be attached to the same game object

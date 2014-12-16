@@ -13,6 +13,7 @@ function Update () {
 function OnTriggerStay()
 {
 	GameObject.Find("FadeInOut").animation.Play("FadeOutLeaveLevel");
+	audio.Play();
 	yield WaitForSeconds(1);
 	Application.LoadLevel(nextLevel);
 }
