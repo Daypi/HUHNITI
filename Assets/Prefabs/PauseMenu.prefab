@@ -263,7 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3d03ccba4e1d147a09492f908ef6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSuivant: Menu
+  action: Menu
+  i: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3d03ccba4e1d147a09492f908ef6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSuivant: Resume
+  action: Resume
+  i: 0
 --- !u!132 &13200000
 GUIText:
   m_ObjectHideFlags: 1
