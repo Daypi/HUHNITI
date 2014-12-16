@@ -69,7 +69,7 @@ enum MovementTransferOnJump {
 
 function reverseGravity()
 {
-	tr.transform.position.y += 2;
+	tr.transform.position.y += 0.5;
 	tr.animation.Play("rotation_player_up");
 }
 
