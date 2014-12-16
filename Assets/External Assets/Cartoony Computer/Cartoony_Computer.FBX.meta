@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: f989d126151afb7418273a5cf8e6a337
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera001
+    100002: Camera001.Target
+    100004: //RootNode
+    100006: Computer_bridge
+    100008: Computer_cabinett
+    100010: Computer_destructButton
+    100012: Computer_knob1
+    100014: Computer_knob2
+    100016: Computer_mainCTRl
+    100018: Computer_rotateCTRL
+    100020: Computer_tilt
+    100022: ComputerScreen
+    100024: Dummy001
+    100026: FillLight
+    100028: FillLight.Target
+    100030: KeyLight
+    100032: KeyLight.Target
+    100034: KickLight
+    100036: KickLight.Target
+    100038: Plane001
+    100040: RimLight
+    100042: RimLight.Target
+    400000: Camera001
+    400002: Camera001.Target
+    400004: //RootNode
+    400006: Computer_bridge
+    400008: Computer_cabinett
+    400010: Computer_destructButton
+    400012: Computer_knob1
+    400014: Computer_knob2
+    400016: Computer_mainCTRl
+    400018: Computer_rotateCTRL
+    400020: Computer_tilt
+    400022: ComputerScreen
+    400024: Dummy001
+    400026: FillLight
+    400028: FillLight.Target
+    400030: KeyLight
+    400032: KeyLight.Target
+    400034: KickLight
+    400036: KickLight.Target
+    400038: Plane001
+    400040: RimLight
+    400042: RimLight.Target
+    2300000: Computer_bridge
+    2300002: Computer_cabinett
+    2300004: Computer_destructButton
+    2300006: Computer_knob1
+    2300008: Computer_knob2
+    2300010: Computer_tilt
+    2300012: ComputerScreen
+    2300014: Plane001
+    3300000: Computer_bridge
+    3300002: Computer_cabinett
+    3300004: Computer_destructButton
+    3300006: Computer_knob1
+    3300008: Computer_knob2
+    3300010: Computer_tilt
+    3300012: ComputerScreen
+    3300014: Plane001
+    4300000: Computer_cabinett
+    4300002: Computer_bridge
+    4300004: ComputerScreen
+    4300006: Computer_knob2
+    4300008: Computer_knob1
+    4300010: Computer_tilt
+    4300012: Computer_destructButton
+    4300014: Plane001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
