@@ -10,21 +10,24 @@ function Update () {
 
 }
 
-function OnTriggerStay()
+function OnTriggerStay(hit : Collider)
 {
-	if (nextLevel == "Finish")
+	if (hit.tag == "Player")
 	{
-		yield WaitForSeconds(14);
-		GameObject.Find("FadeInOut").animation.Play("FadeOutLeaveLevel");
-		yield WaitForSeconds(1);
-		audio.Play();
-		Application.LoadLevel("Menu");
-	}
-	else
-	{
-		GameObject.Find("FadeInOut").animation.Play("FadeOutLeaveLevel");
-		audio.Play();
-		yield WaitForSeconds(1);
-		Application.LoadLevel(nextLevel);
+		if (nextLevel == "Finish")
+		{
+			yield WaitForSeconds(14);
+			GameObject.Find("FadeInOut").animation.Play("FadeOutLeaveLevel");
+			yield WaitForSeconds(1);
+			audio.Play();
+			Application.LoadLevel("Menu");
+		}
+		else
+		{
+			GameObject.Find("FadeInOut").animation.Play("FadeOutLeaveLevel");
+			audio.Play();
+			yield WaitForSeconds(1);
+			Application.LoadLevel(nextLevel);
+		}
 	}
 }
