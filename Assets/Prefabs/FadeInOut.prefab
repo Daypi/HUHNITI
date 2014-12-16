@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 131: {fileID: 13100000}
   - 111: {fileID: 11100000}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FadeInOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
