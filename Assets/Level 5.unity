@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushPower: 1
-  basePush: 1
+  basePush: .699999988
 --- !u!111 &100254138
 Animation:
   m_ObjectHideFlags: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
   moving: 1
   useFixedUpdate: 1
   movement:
-    maxForwardSpeed: 10
-    maxSidewaysSpeed: 10
-    maxBackwardsSpeed: 10
+    maxForwardSpeed: 8
+    maxSidewaysSpeed: 8
+    maxBackwardsSpeed: 8
     slopeSpeedMultiplier:
       serializedVersion: 2
       m_Curve:
@@ -475,8 +475,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    maxGroundAcceleration: 30
-    maxAirAcceleration: 20
+    maxGroundAcceleration: 20
+    maxAirAcceleration: 15
     gravity: 10
     maxFallSpeed: 20
   jumping:
@@ -865,8 +865,8 @@ Transform:
   m_PrefabInternal: {fileID: 1665127324}
   m_GameObject: {fileID: 218980883}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -.75, y: .25, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: -.75, y: .75, z: 0}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 1945891981}
   m_RootOrder: 1
@@ -1179,8 +1179,8 @@ Transform:
   m_PrefabInternal: {fileID: 1665127324}
   m_GameObject: {fileID: 295368654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .25, z: .75}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: -8.94069814e-08, y: .75, z: .750000238}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 1945891981}
   m_RootOrder: 2
@@ -1866,8 +1866,8 @@ Transform:
   m_PrefabInternal: {fileID: 906085501}
   m_GameObject: {fileID: 462638449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .25, z: -.75}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: 0, y: .75, z: -.75}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 549763341}
   m_RootOrder: 3
@@ -2482,7 +2482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 374413176}
-  player: {fileID: 0}
+  player: {fileID: 100254135}
 --- !u!108 &549763343
 Light:
   m_ObjectHideFlags: 0
@@ -3948,7 +3948,7 @@ GameObject:
   - 114: {fileID: 614490337}
   m_Layer: 0
   m_Name: buttonDoor
-  m_TagString: Untagged
+  m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4117,8 +4117,8 @@ Transform:
   m_PrefabInternal: {fileID: 906085501}
   m_GameObject: {fileID: 628195315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .25, z: .75}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: -8.94069814e-08, y: .75, z: .750000238}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 549763341}
   m_RootOrder: 2
@@ -4264,7 +4264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 96b152c51c82b2c46b207cd951eac992, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96b152c51c82b2c46b207cd951eac992, type: 2}
@@ -6152,7 +6152,7 @@ Prefab:
     - target: {fileID: 11400000, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 100254135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f555479131f3df940a8bd556840f9a63, type: 2}
   m_RootGameObject: {fileID: 549763340}
@@ -8351,8 +8351,8 @@ GameObject:
   - 23: {fileID: 1435902681}
   - 114: {fileID: 1435902680}
   m_Layer: 0
-  m_Name: lock
-  m_TagString: Untagged
+  m_Name: lock_yellow
+  m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8385,7 +8385,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0c5611ed904ce6d4081b9dff138746a2, type: 2}
+  - {fileID: 2100000, guid: 64ba915685d0cfa4e85de880713c970d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9134,7 +9134,7 @@ Prefab:
     - target: {fileID: 11400000, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 100254135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f555479131f3df940a8bd556840f9a63, type: 2}
   m_RootGameObject: {fileID: 1945891980}
@@ -9240,7 +9240,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0c5611ed904ce6d4081b9dff138746a2, type: 2}
+      objectReference: {fileID: 2100000, guid: 64ba915685d0cfa4e85de880713c970d, type: 2}
     - target: {fileID: 2300002, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9268,6 +9268,10 @@ Prefab:
     - target: {fileID: 400002, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.07121038
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
+      propertyPath: m_Name
+      value: lock_yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
@@ -9299,8 +9303,8 @@ Transform:
   m_PrefabInternal: {fileID: 1665127324}
   m_GameObject: {fileID: 1754450343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .25, z: -.75}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: 0, y: .75, z: -.75}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 1945891981}
   m_RootOrder: 3
@@ -9500,6 +9504,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bcf60238fccc4f847a069c111bf29a28, type: 2}
+    - target: {fileID: 100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
+      propertyPath: m_Name
+      value: lock_red
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
   m_RootGameObject: {fileID: 2047313178}
@@ -11195,7 +11203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 374413176}
-  player: {fileID: 0}
+  player: {fileID: 100254135}
 --- !u!108 &1945891983
 Light:
   m_ObjectHideFlags: 0
@@ -11299,8 +11307,8 @@ Transform:
   m_PrefabInternal: {fileID: 906085501}
   m_GameObject: {fileID: 1952076630}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -.75, y: .25, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: .200000003}
+  m_LocalPosition: {x: -.75, y: .75, z: 0}
+  m_LocalScale: {x: 1, y: 2.5, z: .200000003}
   m_Children: []
   m_Father: {fileID: 549763341}
   m_RootOrder: 1
@@ -11534,6 +11542,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e126c50d13004394eafda38f23398e46, type: 2}
+    - target: {fileID: 100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
+      propertyPath: m_Name
+      value: lock_orange
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a569216557d02e44ad3b041fd0f8b78, type: 2}
   m_RootGameObject: {fileID: 1968551919}
@@ -11621,8 +11633,8 @@ GameObject:
   - 23: {fileID: 1968551921}
   - 114: {fileID: 1968551920}
   m_Layer: 0
-  m_Name: lock
-  m_TagString: Untagged
+  m_Name: lock_orange
+  m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12025,8 +12037,8 @@ GameObject:
   - 23: {fileID: 2047313181}
   - 114: {fileID: 2047313180}
   m_Layer: 0
-  m_Name: lock
-  m_TagString: Untagged
+  m_Name: lock_red
+  m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

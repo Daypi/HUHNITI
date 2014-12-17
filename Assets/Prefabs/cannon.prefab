@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 5400000, guid: 8a2715a2e39bf414ea2c4e9ee1f107b4, type: 2}
-  speed: 100
+  speed: 80
   angle: 5
   cannon: {fileID: 100002}
   level: {fileID: 0}
