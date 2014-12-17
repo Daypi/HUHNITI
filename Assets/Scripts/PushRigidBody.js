@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 var pushPower = 0.5;
-var basePush = 1;
+var basePush = 1.0;
 function OnControllerColliderHit (hit : ControllerColliderHit)
 {
 var body : Rigidbody = hit.collider.attachedRigidbody;
