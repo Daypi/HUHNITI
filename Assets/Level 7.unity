@@ -19418,7 +19418,7 @@ GameObject:
   - 114: {fileID: 604779167}
   - 82: {fileID: 604779166}
   m_Layer: 0
-  m_Name: gravitySwitch
+  m_Name: gravitySwitch_ceiling_right_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19431,8 +19431,8 @@ Transform:
   m_PrefabInternal: {fileID: 1293141687}
   m_GameObject: {fileID: 604779164}
   m_LocalRotation: {x: -.707106829, y: 3.09086232e-08, z: .707106829, w: -3.09086232e-08}
-  m_LocalPosition: {x: 4.00475883, y: 14.1130638, z: 11.2817717}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .407972246, y: -1.46466064, z: .37288779}
+  m_LocalScale: {x: .0333333313, y: 2, z: .0199999996}
   m_Children:
   - {fileID: 1875682962}
   - {fileID: 632136809}
@@ -19448,8 +19448,8 @@ Transform:
   - {fileID: 2075239543}
   - {fileID: 2012837035}
   - {fileID: 2007414382}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1173019140}
+  m_RootOrder: 18
 --- !u!82 &604779166
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26629,7 +26629,7 @@ Transform:
   - {fileID: 887633759}
   - {fileID: 444244247}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &882001350
 GameObject:
   m_ObjectHideFlags: 0
@@ -33803,7 +33803,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1013732500
 GameObject:
   m_ObjectHideFlags: 0
@@ -36046,6 +36046,7 @@ Transform:
   - {fileID: 2083419792}
   - {fileID: 1894370307}
   - {fileID: 2125059728}
+  - {fileID: 604779165}
   m_Father: {fileID: 2067846452}
   m_RootOrder: 1
 --- !u!23 &1173019141
@@ -38802,19 +38803,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1173019140}
     m_Modifications:
     - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.00475883
+      value: .407972246
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.1130638
+      value: -1.46466064
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 11.2817717
+      value: .37288779
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: m_LocalRotation.x
@@ -38834,7 +38835,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
+      propertyPath: m_Name
+      value: gravitySwitch_ceiling_right_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .0333333313
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: f555479131f3df940a8bd556840f9a63, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .0199999996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f555479131f3df940a8bd556840f9a63, type: 2}
@@ -52518,7 +52535,7 @@ Transform:
   - {fileID: 971796405}
   - {fileID: 521508505}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1672146579
 GameObject:
   m_ObjectHideFlags: 0
@@ -53975,7 +53992,7 @@ Transform:
   - {fileID: 1263732219}
   - {fileID: 1225534931}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!82 &1764222769
 AudioSource:
   m_ObjectHideFlags: 0
