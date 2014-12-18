@@ -33,10 +33,12 @@ if (collision.tag != "explosion_cube") {
 		for (var hit : Collider in colliders) {
 			if (hit && hit.rigidbody)
 				hit.rigidbody.constraints = RigidbodyConstraints.None;
+			if (hit && hit.rigidbody && hit.tag == "cube") 
+				hit.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 			if (hit.tag == "cannon")
 				hit.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			}
-		forceField.renderer.enabled = false;
+		forceField.active = false;
 		free = false;
 		}
 	}
@@ -52,7 +54,7 @@ if (collision.tag != "explosion_cube") {
 			if (hit && hit.rigidbody)
 				hit.rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
 			}
-		forceField.renderer.enabled = true;
+		forceField.active = true;
 		free = true;
 		}
 	}
@@ -67,7 +69,7 @@ down--;
 			if (hit && hit.rigidbody)
 				hit.rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
 			}
-		forceField.renderer.enabled = true;
+		forceField.active = true;
 		free = true;
 		}
 }
