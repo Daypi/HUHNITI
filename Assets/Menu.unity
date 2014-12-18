@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curseur: {fileID: 2800000, guid: dee3fd98e670bd343b98059d98749d36, type: 3}
+  mainMenu: 1
 --- !u!1 &561785583
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ function Update () {
 		
 		// Multiply the normalized direction vector by the modified length
 		directionVector = directionVector * directionLength;
-		if (!motor.audio.isPlaying && motor.grounded)
+		if (!motor.audio.isPlaying && motor.grounded && Time.timeScale != 0) // timescale = 0 means pause menu is open
 			motor.audio.Play();
 	}
 	
