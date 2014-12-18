@@ -1,9 +1,15 @@
 ﻿#pragma strict
-var couleurEntrer : Color = Color.green;
-var couleurSortie : Color = Color.white;
+var couleurEntrer : Color = Vector4(183, 184, 127, 255);
+var couleurSortie : Color = Vector4(199, 199, 199, 255);
 var tailleEntrer : float = 45;
 var tailleSortie : float = 45;
 var son : AudioClip;
+
+function Start()
+{
+	guiText.material.color = couleurSortie;
+	guiText.fontSize = tailleSortie;
+}
 
 function OnMouseEnter() {
 	audio.PlayOneShot(son);
