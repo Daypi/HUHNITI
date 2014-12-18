@@ -1,6 +1,7 @@
 ﻿var level : GameObject;
 var player : GameObject;
 function OnTriggerEnter (collision : Collider) {
+	audio.Play();
 	var pos : Vector3 = this.transform.position;
 	//var tr : Transform = player.getComponent(Transform);
 	if (collision.gameObject.tag == "Player"){
