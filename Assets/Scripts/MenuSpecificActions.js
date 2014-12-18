@@ -7,7 +7,7 @@ function OnMouseUp() {
      else if (action == "ShowLevels")
      {
      	i = 0;
-     	while (i < 7)
+     	while (i < 8)
      	{
      		GameObject.Find("LevelList").transform.GetChild(i).gameObject.SetActive(true);
      		i++;
@@ -22,7 +22,7 @@ function OnMouseUp() {
 	else if (action == "BackToMain")
     {
      	i = 0;
-     	while (i < 7)
+     	while (i < 8)
      	{
      		GameObject.Find("LevelList").transform.GetChild(i).gameObject.SetActive(false);
      		i++;
