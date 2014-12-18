@@ -12,7 +12,33 @@ var ammo : int = 5;
 
 private var generated : int = 0;
 
+function OnTriggerEnter(hit : Collider) {
+if (hit && hit.tag == "Player") {
+	var name : String = button.transform.name + "_cubeClone" + generated.ToString();
+	generated++;
+	var cubeClone : Rigidbody = Instantiate(cube, spawnLocation.position, spawnLocation.rotation);
+	cubeClone.name = name;
+	cubeClone.transform.parent = this.transform;
+    cubeClone.velocity = button.transform.right * (-speed);
+    audio.Play();
+    }
+}
+
+function OnTriggerExit(hit : Collider) {
+if (hit && hit.tag == "Player") {
+if (generated >= ammo)
+	{
+		var num : int = generated - ammo;
+		var names : String = button.transform.name + "_cubeClone" + num.ToString();
+		var cubeBis : GameObject = GameObject.Find(names);
+		cubeBis.SendMessage("explosion");
+		Destroy(cubeBis);
+	}
+	}
+}
+
 function pushedButtonCallback () {
+Debug.Log("test");
 	if (generated >= ammo)
 	{
 		var num : int = generated - ammo;
