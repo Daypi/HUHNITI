@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material
+  m_Name: flag_red
   m_Shader: {fileID: 4800000, guid: 6d98ac1e63965934dbe9c353ed8b5230, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
