@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197719ef08ce847428c1684ccd753ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 3
+  MinAngle: 90
   cube: {fileID: 5400000, guid: 17a5b280ff5b6c948a155abb414eb62b, type: 2}
   speed: 10
   button: {fileID: 100002}
