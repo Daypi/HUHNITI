@@ -56,7 +56,7 @@ function setTimer() {
 }
 
 function Update () {
-	if (Input.GetButtonUp("Fire1"))
+	if (Input.GetButtonUp("Fire1") && timer)
 	{
 		var player = GameObject.Find("First Person Controller").transform;
 		if (Vector3.Distance(player.position, transform.position) <= Range)
