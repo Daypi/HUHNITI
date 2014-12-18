@@ -233,12 +233,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: .899999976
+  m_PlayOnAwake: 0
+  m_Volume: .200000003
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 0
+  Priority: 13
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
