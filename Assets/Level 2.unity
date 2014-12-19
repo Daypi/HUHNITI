@@ -908,8 +908,8 @@ Transform:
   m_LocalPosition: {x: 3.28202152, y: -3.99578142, z: 11.8174839}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 170685297}
+  m_RootOrder: 9
 --- !u!1 &109583272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,8 +1989,10 @@ Transform:
   - {fileID: 37948037}
   - {fileID: 606165281}
   - {fileID: 635743129}
+  - {fileID: 1528274102}
+  - {fileID: 108872000}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &179755893
 GameObject:
   m_ObjectHideFlags: 0
@@ -5889,7 +5891,7 @@ Transform:
   - {fileID: 192555885}
   - {fileID: 1531042893}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &515148611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7310,7 +7312,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 170685297}
     m_Modifications:
     - target: {fileID: 400028, guid: d92c09a1fa5609f4c96685d97e545de0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7342,7 +7344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: d92c09a1fa5609f4c96685d97e545de0, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: d92c09a1fa5609f4c96685d97e545de0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9765,7 +9767,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 170685297}
     m_Modifications:
     - target: {fileID: 400000, guid: 904c860cdda424d4fa37c6c7ddebcffd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9797,7 +9799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 904c860cdda424d4fa37c6c7ddebcffd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 904c860cdda424d4fa37c6c7ddebcffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -19100,8 +19102,8 @@ Transform:
   m_Children:
   - {fileID: 1760031021}
   - {fileID: 846349359}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 170685297}
+  m_RootOrder: 8
 --- !u!95 &1528274103
 Animator:
   serializedVersion: 3
@@ -23676,7 +23678,7 @@ Transform:
   - {fileID: 1237590087}
   - {fileID: 148004707}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &1879340467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24093,7 +24095,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1914989795
 GameObject:
   m_ObjectHideFlags: 0
